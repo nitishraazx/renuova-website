@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RENUOVA | Tank Full Auto Cut Motor</title>
+<style>
+  /* --- CSS CODE --- */
+  body {
+    background-color: #000;
+    color: #fff;
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+  }
+
+  .header {
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid #00d2ff;
+    box-shadow: 0 5px 20px rgba(0, 210, 255, 0.3);
+    position: sticky;
+    top: 0;
+    background: #000;
+    z-index: 100;
+  }
+
+  .logo {
+    font-size: 32px;
+    font-weight: bold;
+    color: #00d2ff;
+    letter-spacing: 5px;
+    text-shadow: 0 0 15px #00d2ff;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    padding: 50px 20px;
+  }
+
+  .product-card {
+    display: flex;
+    background: #0a0a0a;
+    width: 100%;
+    max-width: 1100px;
+    border: 1px solid #1a1a1a;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  /* Image Section (White Background for Product) */
+  .image-box {
+    flex: 1.2;
+    background: #fff;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 1px solid #1a1a1a;
+  }
+
+  .main-img-container {
+    width: 100%;
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .main-img-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: 0.5s ease;
+  }
+
+  .main-img-container img:hover {
+    transform: scale(1.4);
+  }
+
+  /* Gallery Buttons */
+  .thumbnail-gallery {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+  }
+
+  .thumb-btn {
+    width: 80px;
+    height: 80px;
+    border: 1px solid #ccc;
+    background: #fff;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 8px;
+    transition: 0.3s;
+    overflow: hidden;
+  }
+
+  .thumb-btn img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .thumb-btn.active {
+    border: 3px solid #00d2ff;
+    box-shadow: 0 0 10px rgba(0, 210, 255, 0.5);
+  }
+
+  .zoom-info {
+    color: #888;
+    font-size: 12px;
+    margin-top: 15px;
+  }
+
+  /* Details Section */
+  .details-box {
+    flex: 1.5;
+    padding: 40px;
+  }
+
+  .product-title {
+    font-size: 28px;
+    color: #00d2ff;
+    margin-bottom: 10px;
+  }
+
+  .badge {
+    background: #388e3c;
+    padding: 5px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 15px;
+  }
+
+  .description h3 {
+    color: #00d2ff;
+    margin-top: 20px;
+  }
+
+  .description ul {
+    padding-left: 20px;
+    line-height: 1.8;
+    color: #ccc;
+  }
+
+  .price-area {
+    margin: 30px 0;
+  }
+  .price { font-size: 36px; font-weight: bold; }
+  .mrp { text-decoration: line-through; color: #666; margin-left: 15px; font-size: 20px; }
+  .discount { color: #388e3c; margin-left: 15px; font-weight: bold; font-size: 20px; }
+
+  .buttons { display: flex; gap: 15px; }
+  .cart-btn, .buy-btn {
+    flex: 1;
+    padding: 18px;
+    border: none;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+
+  .cart-btn { background: #ff9f00; color: #fff; }
+  .buy-btn { background: #fb641b; color: #fff; }
+
+  @media (max-width: 900px) {
+    .product-card { flex-direction: column; }
+    .image-box { border-right: none; border-bottom: 1px solid #1a1a1a; }
+    .main-img-container { height: 350px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="logo">RENUOVA</div>
+</header>
+
+<div class="container">
+  <div class="product-card">
+    <!-- GALLERY SECTION -->
+    <div class="image-box">
+      <div class="main-img-container">
+        <!-- Default Photo (Photo 1) -->
+        <img id="mainImage" src="https://i.ibb.co/bR5bFdS6/black-back-ground-tank-full-device-pic.png" alt="Device Main View">
+      </div>
+      
+      <div class="thumbnail-gallery">
+        <!-- Photo 1 Thumbnail -->
+        <button class="thumb-btn active" onclick="changeImage('https://i.ibb.co/bR5bFdS6/black-back-ground-tank-full-device-pic.png', this)">
+          <img src="https://i.ibb.co/bR5bFdS6/black-back-ground-tank-full-device-pic.png" alt="View 1">
+        </button>
+        
+        <!-- Photo 2 Thumbnail -->
+        <button class="thumb-btn" onclick="changeImage('https://i.ibb.co/k61GxFDF/Whats-App-Image-2025-12-17-at-9-43-41-PM.jpg', this)">
+          <img src="https://i.ibb.co/k61GxFDF/Whats-App-Image-2025-12-17-at-9-43-41-PM.jpg" alt="View 2">
+        </button>
+      </div>
+      <p class="zoom-info">Hover image to zoom • Click images to switch</p>
+    </div>
+
+    <!-- DETAILS SECTION -->
+    <div class="details-box">
+      <h1 class="product-title">Tank Full Auto Cut Motor</h1>
+      <span class="badge">100% Safe System</span>
+
+      <div class="description">
+        <h3>Description & Features:</h3>
+        <ul>
+          <li><strong>Auto-OFF:</strong> Tank bharte hi motor apne aap band ho jayegi.</li>
+          <li><strong>No Shock:</strong> Plastic float switch ki wajah se paani mein current ka khatra nahi.</li>
+          <li><strong>Easy Start:</strong> Device ON karte hi motor start ho jati hai.</li>
+          <li><strong>Quality:</strong> Mazboot aur lambe samay tak chalne wala system.</li>
+        </ul>
+      </div>
+
+      <div class="price-area">
+        <span class="price">₹999</span>
+        <span class="mrp">₹1,999</span>
+        <span class="discount">50% off</span>
+      </div>
+
+      <div class="buttons">
+        <button class="cart-btn">ADD TO CART</button>
+        <button class="buy-btn">BUY NOW</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function changeImage(imgSrc, btnElement) {
+    // Main badi image badalne ke liye
+    document.getElementById('mainImage').src = imgSrc;
+    
+    // Sabhi buttons se 'active' blue border hatane ke liye
+    const buttons = document.querySelectorAll('.thumb-btn');
+    buttons.forEach(btn => btn.classList.remove('active'));
+    
+    // Sirf click kiye gaye button par blue border lagane ke liye
+    btnElement.classList.add('active');
+  }
+</script>
+
+</body>
+</html>
